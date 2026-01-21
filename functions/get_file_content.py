@@ -13,6 +13,7 @@ schema_get_file_content = types.FunctionDeclaration(
                 description="Specified file",
             ),
         },
+        required=["file_path"]
     ),
 )
 

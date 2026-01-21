@@ -12,10 +12,15 @@ schema_run_python_file = types.FunctionDeclaration(
                 description="Specified file we wish to run",
             ),
             "args": types.Schema(
-                type=types.Type.STRING,
-                description="A command string"   
+                type=types.Type.ARRAY,
+                description="Optional command-line arguments to pass to the file",
+                items=types.Schema(
+                    type=types.Type.STRING,
+                    description="Single argument string",
+                ),
             ),
         },
+        required=["file_path"]
     ),
 )
 
